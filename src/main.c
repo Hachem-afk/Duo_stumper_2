@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2025
-** duo_stumpeur4
+** duo_stumpeur
 ** File description:
 ** main
 */
@@ -13,13 +13,15 @@ int main(int argc, char const *argv[])
 {
     global_t *all = NULL;
 
+    if (argc != 2)
+        return FAILURE;
     all = init_struct(argc, argv, all);
     if (!all)
         return FAILURE;
-    if (print_grid(all) == FAILURE)
+    if (print_menu(all) == FAILURE)
         return FAILURE;
-    while (1) {
-        if (next_move(all) == FAILURE)
+    for (size_t i = 0; i < all->nb_iteration; i++) {
+        if (next_move(all, i) == FAILURE)
             return FAILURE;
         if (print_grid(all) == FAILURE)
             return FAILURE;
