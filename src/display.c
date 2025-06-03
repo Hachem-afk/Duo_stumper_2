@@ -18,7 +18,6 @@ void print_first_round(const char *secret)
     for (i = 1; i < length; i++) {
         printf("*");
     }
-    printf("\n\n");
 }
 
 void print_result_correct(const char *guess, const char *secret, char *result)
@@ -69,5 +68,5 @@ void print_result(const char *guess, const char *secret)
     result[length] = '\0';
     print_result_correct(guess, secret, result);
     print_result_m(guess, secret, result);
-    printf("Result: %s\n", result);
+    printf("%s", result);
 }
