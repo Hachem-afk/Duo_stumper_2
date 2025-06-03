@@ -5,29 +5,21 @@
 ** main
 */
 
-#include <stdio.h>
-#include "my.h"
-#include "struct.h"
+#include "../include/lingo.h"
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
-    global_t *all = NULL;
+    char words[100][MAX_WORD_LENGTH];
+    int word_count;
+    char *secret_word;
 
-    if (argc != 2)
-        return FAILURE;
-    all = init_struct(argc, argv, all);
-    if (!all)
-        return FAILURE;
-    if (print_menu(all) == FAILURE)
-        return FAILURE;
-    for (size_t i = 0; i < all->nb_iteration; i++) {
-        if (next_move(all, i) == FAILURE)
-            return FAILURE;
-        if (print_grid(all) == FAILURE)
-            return FAILURE;
-        all->nb_turn += 1;
-        if (is_winner(all) == 0 || all->nb_turn == all->size * all->size)
-            break;
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s <word_file>\n", argv[0]);
+        return 84;
     }
-    return SUCCESS;
+    word_count = 0;
+    load_words(argv[1], words, &word_count);
+    secret_word = choose_secret_word(words, word_count);
+    play_lingo(secret_word);
+    return 0;
 }
