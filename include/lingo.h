@@ -7,7 +7,7 @@
 
 #ifndef LINGO
     #define LINGO
-    #include <stdio.h> 
+    #include <stdio.h>
     #include <stdlib.h>
     #include <string.h>
     #define MAX_WORD_LENGTH 100

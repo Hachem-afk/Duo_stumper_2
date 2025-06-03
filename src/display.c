@@ -27,9 +27,9 @@ void print_result_correct(const char *guess, const char *secret, char *result)
 
     for (i = 0; i < length; i++) {
         if (guess[i] == secret[i]) {
-          result[i] = guess[i];
+            result[i] = guess[i];
         } else {
-          result[i] = '*';
+            result[i] = '*';
         }
     }
 }
@@ -43,7 +43,7 @@ void print_result_m_h(const char *g, const char *secret, char *res, int i)
         if (g[i] == secret[j] && res[j] != secret[j]) {
             res[i] = '?';
             break;
-	}
+        }
     }
 }
 

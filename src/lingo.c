@@ -5,13 +5,13 @@
 ** Lingo core implementation
 */
 
-#include "../include/lingo.h"
- 
+#include "lingo.h"
+
 static int check_too_long_short(char guess[MAX_WORD_LENGTH], size_t length)
 {
     if (strlen(guess) < length) {
         printf("Word too short. Retry.\n>");
-	return 1;
+        return 1;
     }
     if (strlen(guess) > length) {
         printf("Word too long. Retry.\n>");
@@ -43,7 +43,7 @@ void play_lingo(const char *secret)
 
     print_first_round(secret);
     while (1) {
-        if (flag_round == 0) 
+        if (flag_round == 0)
             printf("\n\nRound %d\n>", count);
         scanf("%s", guess);
         flag_round = check_too_long_short(guess, length);
