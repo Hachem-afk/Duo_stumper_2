@@ -36,7 +36,12 @@ void play_lingo(const char *secret)
         if (strcmp(guess, secret) == 0) {
             printf("You won!\n");
             break;
-        } else {
+        }
+        if (count >= length) {
+            printf("You lost!");
+            break;
+        }
+        else {
             print_result(guess, secret);
             count++;
             flag_round = 0;
