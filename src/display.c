@@ -12,6 +12,8 @@ void print_first_round(const char *secret)
     int length = strlen(secret);
     int i;
 
+    printf("*: invalid letter\n?: incorrectly placed letter\n");
+    printf("Will you find the secret word?\n");
     printf("%c", secret[0]);
     for (i = 1; i < length; i++) {
         printf("*");
