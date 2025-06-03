@@ -16,6 +16,7 @@ void print_first_round(const char *secret)
     for (i = 1; i < length; i++) {
         printf("*");
     }
+    printf("\n\n");
 }
 
 void print_result_correct(const char *guess, const char *secret, char *result)

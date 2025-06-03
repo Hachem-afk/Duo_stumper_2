@@ -5,7 +5,8 @@
 ** Check if there is winner
 */
 
-#include "../include/lingo.h"
+#include "lingo.h"
+#include <time.h>
 
 void load_words(const char *filename, char words[][MAX_WORD_LENGTH],
     int *word_count)

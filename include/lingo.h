@@ -17,5 +17,6 @@ void load_words(const char *filename, char words[][MAX_WORD_LENGTH],
     int *word_count);
 char *choose_secret_word(char words[][MAX_WORD_LENGTH], int word_count);
 void play_lingo(const char *secret);
+void print_first_round(const char *secret);
 
 #endif /* LINGO */

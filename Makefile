@@ -5,16 +5,14 @@
 ## compile libmy
 ##
 
-SRC = 	src/main.c	\
-	src/init_struct.c	\
-	src/nbrlen.c	\
-	src/next_move.c	\
-	src/print_grid.c	\
-	src/is_winner.c
+SRC =	src/display.c		\
+	src/file_parsing.c	\
+	src/lingo.c		\
+	src/main.c
 
 OBJ := $(SRC:%.c=%.o)
 
-NAME := tictactoe
+NAME := lingo
 
 CFLAGS := -W -Wall -Wextra -Werror
 
